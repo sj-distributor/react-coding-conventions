@@ -1,6 +1,6 @@
-# 基本
+# React 编码约定
 
-应该统一使用函数组件
+良好的代码规范能够提高代码的可读性，便于 `写作`、`沟通`、`PR Reivew`、减少 `bug`的出现等等，而 `React Coding Conventions` 主要围绕了这几点进行 `React`、`React Native` 的编码约定，统一编码规范，让代码看的更加赏心悦目。
 
 # 状态管理和样式系统
 
@@ -113,7 +113,7 @@ enum LoginTypeEnum {
 
 #### components
 
-应用内可复用组件存放位置，一个目录对应一个组件，如出现组件比较庞大的情况，可拆分数个小组件存放在对应组件目录下，不需要建 components 目录。
+应用内可复用组件存放位置，一个目录对应一个组件，如出现组件比较庞大的情况，可拆分数个小组件存放在对应组件目录下，不需要建 `components` 目录。
 
 ```
 |- app
@@ -127,12 +127,12 @@ enum LoginTypeEnum {
 
 #### hooks
 
-应用内可复用 hooks 或者 Context Providers，例如 use-loading、use-popup、use-confirm、use-keyboard-status，简单的 hooks 可以创建一个文件存放，但是遇到比较复杂的 hooks 或者需要结合 Context Provider 使用的 hooks，需要创建对应目录，并且目录内放置 index.tsx 导出。
+应用内可复用 `hooks` 或者 `Context Providers`，例如 `use-loading`、`use-popup`、`use-confirm`、`use-keyboard-status`，简单的 `hooks` 可以创建一个文件存放，但是遇到比较复杂的 `hooks` 或者需要结合 `Context Provider` 使用的 `hooks`，需要创建对应目录，并且目录内放置 `index.tsx` 导出。
 
 ```
 |- app
   |- hooks
-    |-use-keyboard-status.ts
+    |- use-keyboard-status.ts
     |- use-confirm
       |- confirm-context.tsx
       |- confirm-dialog.tsx
@@ -142,8 +142,8 @@ enum LoginTypeEnum {
 
 #### screen and pages
 
-应用的页面（屏幕）组件存放位置，一个页面（屏幕）组件对应一个目录，如出现页面（屏幕）比较庞大的情况，可在页面（屏幕）目录创建 components 目录，存放拆分的小组件，但是小组件不能继续有 components 目录，
-如果页面（屏幕）组件逻辑比较多，可使用 hooks 拆分逻辑存放到页面（屏幕）目录下。
+应用的页面 **（屏幕）** 组件存放位置，一个页面 **（屏幕）** 组件对应一个目录，如出现页面 **（屏幕）** 比较庞大的情况，可在页面 **（屏幕）** 目录创建 `components` 目录，存放拆分的小组件，但是小组件不能继续有 `components` 目录，
+如果页面 **（屏幕）** 组件逻辑比较多，可使用 `hooks` 拆分逻辑存放到页面（屏幕）目录下。
 
 ```
 |- app
@@ -162,7 +162,7 @@ enum LoginTypeEnum {
 
 #### services/api
 
-建议 api service 根据模块拆分，并且目录放置 index.ts 导出，避免随着功能迭代，单个文件代码超长，影响代码阅读性。
+建议 `api service` 根据 **模块拆分**，并且目录放置 `index.ts` 导出，避免随着功能迭代，单个文件代码超长，影响代码阅读性。
 
 ```
 |- app
@@ -184,12 +184,11 @@ enum LoginTypeEnum {
 ```tsx
 // Bad
 const getUsers = () => {...};
-export default getUsers;
 
+export default getUsers;
 
 // Good
 export const getUsers = () => {...};
-
 ```
 
 #### 使用 ES6 箭头函数
@@ -198,22 +197,20 @@ export const getUsers = () => {...};
 
 ```tsx
 // Bad
-function getUsers () {...};
-
+function getUsers() {...};
 
 // Good
 const getUsers = () => {...};
-
 ```
 
 #### 其他规范
 
 其他规范已写在 ESLint 规则里面
 
-react-native：[https://github.com/sj-distributor/eslint-plugin-react-native](https://github.com/sj-distributor/eslint-plugin-react-native)
+react-native：[sj-distributor/eslint-plugin-react-native](https://github.com/sj-distributor/eslint-plugin-react-native)
 
 react：待开发
 
 # 关于注释
 
-如何使用注释，其实一直是一个备受争议的话题，在《Clean Code》这本书说到好的代码是不需要注释的，但是我觉得毕竟现在 99%的语言都是以英语表达为主，并非我们的母语，阅读起来并没有这么流畅，所以合适添加注释是很有必要的，特别我们都是开发业务系统多，适量的注释，对日后接手项目的同事会有一定的帮助。
+如何使用注释，其实一直是一个备受争议的话题，在 `《Clean Code》` 这本书说到好的代码是不需要注释的，但是我觉得毕竟现在 `99%` 的语言都是以英语表达为主，并非我们的母语，阅读起来并没有这么流畅，所以合适添加注释是很有必要的，特别我们都是开发业务系统多，适量的注释，对日后接手项目的同事会有一定的帮助。
