@@ -44,14 +44,14 @@ interface IBadgeProps { ... }
 const Badge = (props: IBadgeProps) => {...}
 
 // 组件回调属性建议使用 onXXX 命名
-interface ModalProps {
+interface IModalProps {
   onClose: () => void;
 }
 
 // 组件内处理回调属性函数建议使用 handleXXX 命名
 const handleClose = () => {...}
 
-<ModalProps onClose={handleClose} />
+<Modal onClose={handleClose} />
 ```
 
 # 目录结构
