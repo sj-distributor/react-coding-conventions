@@ -26,22 +26,16 @@
 
 文件、目录命名必须以烤串 **（kebab-case）** 命名，例如：`axios-logger`、`home-screen.tsx`、`api-config.ts`
 
-#### 组件、变量、函数、属性命名
+#### 组件
 
 ```tsx
 // React 组件必须以大驼峰（CamelCase）命名
 const BaseButton = () => {...}
 
-// 变量必须以小驼峰（camelCase）命名
-const userName = 'Tom Lee';
-
-// 函数必须以小驼峰（camelCase）命名
-const handleClick = () => {...}
-
 // 组件建议使用 interface 声明 props，并且使用 IxxxProps 方式命名
-interface IBadgeProps { ... }
+interface IModalProps { ... }
 
-const Badge = (props: IBadgeProps) => {...}
+const Modal = (props: IModalProps) => {...}
 
 // 组件回调属性建议使用 onXXX 命名
 interface IModalProps {
@@ -59,6 +53,26 @@ enum SwitchEnum {
 const handleClose = () => {...}
 
 <Modal onClose={handleClose} />
+```
+
+#### 变量、Enum
+
+```tsx
+// 变量必须以小驼峰（camelCase）命名
+const userName = 'Tom Lee';
+
+// Enum 枚举类型建议使用大驼峰（CamelCase）+ 结尾 Enum 方式命名， XxxxEnum 
+enum LoginTypeEnum {
+  Password,
+  VerifyCode
+}
+```
+
+#### 函数
+
+```tsx
+// 函数必须以小驼峰（camelCase）命名
+const handleClick = () => {...}
 ```
 
 # 目录结构
