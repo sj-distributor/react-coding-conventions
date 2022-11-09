@@ -48,6 +48,13 @@ interface IModalProps {
   onClose: () => void;
 }
 
+// 建议枚举以...Enum 命名
+enum SwitchEnum {
+  Off,
+  On,
+  Auto
+}
+
 // 组件内处理回调属性函数建议使用 handleXXX 命名
 const handleClose = () => {...}
 
