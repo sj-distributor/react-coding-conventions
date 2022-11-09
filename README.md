@@ -33,7 +33,7 @@
 const BaseButton = () => {...}
 
 // 组件建议使用 interface 声明 props，并且使用 IxxxProps 方式命名
-interface IModalProps { ... }
+interface IModalProps {...}
 
 const Modal = (props: IModalProps) => {...}
 
@@ -189,6 +189,20 @@ export default getUsers;
 
 // Good
 export const getUsers = () => {...};
+
+```
+
+#### 使用 ES6 箭头函数
+
+箭头函数允许我们使用更短的语法来编写函数。
+
+```tsx
+// Bad
+function getUsers () {...};
+
+
+// Good
+const getUsers = () => {...};
 
 ```
 
