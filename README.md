@@ -42,37 +42,51 @@ interface IModalProps {
   onClose: () => void;
 }
 
-// 建议枚举以...Enum 命名
-enum SwitchEnum {
-  Off,
-  On,
-  Auto
-}
-
 // 组件内处理回调属性函数建议使用 handleXXX 命名
 const handleClose = () => {...}
 
 <Modal onClose={handleClose} />
 ```
 
-#### 变量、Enum
+#### 变量
 
 ```tsx
 // 变量必须以小驼峰（camelCase）命名
-const userName = 'Tom Lee';
-
-// Enum 枚举类型建议使用大驼峰（CamelCase）+ 结尾 Enum 方式命名， XxxxEnum 
-enum LoginTypeEnum {
-  Password,
-  VerifyCode
-}
+const userName = "Tom Lee";
 ```
 
 #### 函数
 
 ```tsx
-// 函数必须以小驼峰（camelCase）命名
+// 函数必须以小驼峰（camelCase）方式命名
 const handleClick = () => {...}
+```
+
+#### Interface
+
+```tsx
+// Interface 必须 I 开头 + 大驼峰（CamelCase）方式命名，IXxx
+interface IUser {
+  id: number;
+  name: string;
+}
+```
+
+#### Type
+
+```tsx
+// Type 类型必须使用大驼峰（CamelCase）+ 结尾 Type 方式命名， XxxxType
+type MethodType = "GET" | "POST" | "PUT" | "PATCH" | "DELETE";
+```
+
+#### Enum
+
+```tsx
+// Enum 枚举类型必须使用大驼峰（CamelCase）+ 结尾 Enum 方式命名， XxxxEnum
+enum LoginTypeEnum {
+  Password,
+  VerifyCode,
+}
 ```
 
 # 目录结构
