@@ -55,6 +55,17 @@ const handleClose = () => {...}
 const userName = "Tom Lee";
 ```
 
+#### 常量
+
+```tsx
+// 常量必须以大写字母命名
+const PI = 3.14;
+
+// 多个单词间要用 下划线（_）分割命名
+const MIN_COUNT = 1;
+const MAX_COUNT = 2;
+```
+
 #### 函数
 
 ```tsx
