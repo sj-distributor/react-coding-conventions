@@ -1,4 +1,4 @@
-# React 编码约定
+# 👨‍💻 React 编码约定
 
 良好的代码规范能够提高代码的可读性，便于 `写作`、`沟通`、`PR Reivew`、减少 `bug`的出现等等，而 `React Coding Conventions` 主要围绕了这几点进行 `React`、`React Native` 的编码约定，统一编码规范，让代码看的更加赏心悦目。
 
@@ -53,6 +53,17 @@ const handleClose = () => {...}
 ```tsx
 // 变量必须以小驼峰（camelCase）命名
 const userName = "Tom Lee";
+```
+
+#### 常量
+
+```tsx
+// 常量必须以大写字母命名
+const PI = 3.14;
+
+// 多个单词间要用 下划线（_）分割命名
+const MIN_COUNT = 1;
+const MAX_COUNT = 2;
 ```
 
 #### 函数
