@@ -169,8 +169,6 @@ enum LoginTypeEnum {
       |- hooks.ts
 ```
 
-####
-
 #### services/api
 
 建议 `api service` 根据 **模块拆分**，并且目录放置 `index.ts` 导出，避免随着功能迭代，单个文件代码超长，影响代码阅读性。
@@ -178,13 +176,27 @@ enum LoginTypeEnum {
 ```
 |- app
   |- services
-    |-api
+    |- api
       |- api.ts
       |- api-auth.ts
       |- api-user.ts
       |- api-order.ts
       |- index.ts
 ```
+
+#### utils
+
+简单的 `utils` 可以创建一个文件存放，但是遇到比较复杂的 `utils` 或者想要 **逻辑** 和 **类型** 分离的，可以创建对应目录，并且目录内放置 `index.tsx` 导出。
+
+```
+|- app
+  |- utils
+    |- event-emitter
+      |- event-emitter.ts
+      |- event-emitter.types.ts
+      |- index.ts
+```
+
 
 # 代码规范
 
