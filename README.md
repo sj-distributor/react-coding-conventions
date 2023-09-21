@@ -18,7 +18,7 @@
 - css module
 - sass
 - less
-- tailwindcss
+- tailwind css
 
 # 命名约定
 
@@ -230,10 +230,25 @@ const getUsers = () => {...};
 
 其他规范已写在 ESLint 规则里面
 
-react-native：[sj-distributor/eslint-plugin-react-native](https://github.com/sj-distributor/eslint-plugin-react-native)
+react：[sj-distributor/eslint-plugin-react](https://github.com/sj-distributor/eslint-plugin-react)
 
-react：待开发
+react-native：[sj-distributor/eslint-plugin-react-native](https://github.com/sj-distributor/eslint-plugin-react-native)
 
 # 关于注释
 
-如何使用注释，其实一直是一个备受争议的话题，在 `《Clean Code》` 这本书说到好的代码是不需要注释的，但是我觉得毕竟现在 `99%` 的语言都是以英语表达为主，并非我们的母语，阅读起来并没有这么流畅，所以合适添加注释是很有必要的，特别我们都是开发业务系统多，适量的注释，对日后接手项目的同事会有一定的帮助。
+如何使用注释，其实一直是一个备受争议的话题，在 `《Clean Code》` 这本书说到好的代码是不需要注释的，但是我觉得毕竟现在 `99%` 的语言都是以英语表达为主，并非我们的母语，阅读起来并没有这么流畅，所以合适添加注释是很有必要的，特别我们都是开发业务系统多，适量的注释，对日后维护项目和新接手项目的同事会有一定的帮助。
+
+# 关于依赖锁定
+
+为了确保开发团队成员都使用相同的依赖版本，避免出现依赖冲突，依赖版本不一致的情况，导致影响团队合作效率和项目稳定性 ，采用以下依赖锁定策略：
+
+- 必须将依赖的锁定文件（如 `yarn.lock`、`package-lock.json`、`pnpm-lock.yaml`）上传到 **版本控制系统**。
+- 锁定文件的更新需要严格的代码审查流程控制 `(PR Review)` ，以防止意外的依赖更新和潜在的问题。
+
+# 使用 tailwind css + antd 的一些建议
+
+- 尽可能使用 `className` 去调用 `tailwind css` 的样式。
+- 所有颜色样式需定义在颜色主题配置文件中 `/src/theme/colors.ts`。
+- 所有字体大小样式需定义在 `tailwind.config.ts/.js` 配置文件中的 `theme` 属性中。
+- 一些可以共用的样式也可以考虑定义在主题配置里面: `tailwind.config.ts/.js`
+- `antd` 组件样式修改时如果是通用样式，可以利用 `antd` 的[自定义主题功能进行样式配置](https://ant.design/theme-editor-cn#component-style)，然后定义在 `antd` 主题配置文件中 `。
