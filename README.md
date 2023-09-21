@@ -245,10 +245,10 @@ react-native：[sj-distributor/eslint-plugin-react-native](https://github.com/sj
 - 必须将依赖的锁定文件（如 `yarn.lock`、`package-lock.json`、`pnpm-lock.yaml`）上传到 **版本控制系统**。
 - 锁定文件的更新需要严格的代码审查流程控制 `(PR Review)` ，以防止意外的依赖更新和潜在的问题。
 
-# 使用 tailwind css 建议
+# 使用 tailwind css + antd 的一些建议
 
 - 尽可能使用 `className` 去调用 `tailwind css` 的样式。
-- 所有颜色样式需定义在颜色主题配置文件中 `/src/theme/colors.ts` 进行调用。
-- 所有字体大小样式需定义在 `tailwind.config.ts` 配置文件中的 `theme` 属性中。
-- 一些可以共用的样式也可以考虑定义在主题配置里面: `tailwind.config.ts`
-- `antd` 组件样式修改时如果是通用样式，可以利用 `antd` 的自定义主题功能进行样式配置，然后定义在 `antd` 主题配置文件中 `/src/theme/theme.ts` [( antd 生成自定义主题配置 GUI )](https://ant.design/theme-editor-cn#component-style)
+- 所有颜色样式需定义在颜色主题配置文件中 `/src/theme/colors.ts`。
+- 所有字体大小样式需定义在 `tailwind.config.ts/.js` 配置文件中的 `theme` 属性中。
+- 一些可以共用的样式也可以考虑定义在主题配置里面: `tailwind.config.ts/.js`
+- `antd` 组件样式修改时如果是通用样式，可以利用 `antd` 的[自定义主题功能进行样式配置](https://ant.design/theme-editor-cn#component-style)，然后定义在 `antd` 主题配置文件中 `。
