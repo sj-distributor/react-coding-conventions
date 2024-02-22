@@ -8,6 +8,7 @@
 
 #### 状态管理
 
+- zustand
 - mobx state tree
 - recoil
 - hox
@@ -29,20 +30,20 @@
 #### 组件
 
 ```tsx
-// React 组件必须以大驼峰（CamelCase）命名
+// React 组件必须采用大驼峰命名法（CamelCase）
 const BaseButton = () => {...}
 
-// 组件建议使用 interface 声明 props，并且使用 IxxxProps 方式命名
+// 建议使用接口（interface）声明 props，并以 IxxxProps 的形式命名
 interface IModalProps {...}
 
 const Modal = (props: IModalProps) => {...}
 
-// 组件回调属性建议使用 onXXX 命名
+// 组件的回调属性建议以 onXXX 命名
 interface IModalProps {
   onClose: () => void;
 }
 
-// 组件内处理回调属性函数建议使用 handleXXX 命名
+// 组件内部处理回调属性函数建议以 handleXXX 命名
 const handleClose = () => {...}
 
 <Modal onClose={handleClose} />
@@ -51,14 +52,14 @@ const handleClose = () => {...}
 #### 变量
 
 ```tsx
-// 变量必须以小驼峰（camelCase）命名
+// 变量命名应采用小驼峰命名法（camelCase）
 const userName = "Tom Lee";
 ```
 
 #### 常量
 
 ```tsx
-// 常量必须以大写字母命名
+// 常量应采用大写字母命名
 const PI = 3.14;
 
 // 多个单词间要用 下划线（_）分割命名
@@ -69,14 +70,14 @@ const MAX_COUNT = 2;
 #### 函数
 
 ```tsx
-// 函数必须以小驼峰（camelCase）方式命名
+// 函数命名建议采用小驼峰命名法（camelCase）
 const handleClick = () => {...}
 ```
 
 #### Interface
 
 ```tsx
-// Interface 必须 I 开头 + 大驼峰（CamelCase）方式命名，IXxx
+// Interface 建议以 I 开头，采用大驼峰命名法（CamelCase），例如 IUser
 interface IUser {
   id: number;
   name: string;
@@ -86,14 +87,14 @@ interface IUser {
 #### Type
 
 ```tsx
-// Type 类型必须使用大驼峰（CamelCase）+ 结尾 Type 方式命名， XxxxType
+// Type 类型应采用大驼峰命名法（CamelCase），并以 Type 结尾，例如 MethodType
 type MethodType = "GET" | "POST" | "PUT" | "PATCH" | "DELETE";
 ```
 
 #### Enum
 
 ```tsx
-// Enum 枚举类型必须使用大驼峰（CamelCase）+ 结尾 Enum 方式命名， XxxxEnum
+// Enum 枚举类型应采用大驼峰命名法（CamelCase），并以 Enum 结尾，例如 LoginTypeEnum
 enum LoginTypeEnum {
   Password,
   VerifyCode,
@@ -112,7 +113,7 @@ enum LoginTypeEnum {
   |- i18n - 多国语言翻译资源
   |- model - 状态管理文件
   |- navigation - 导航组件（仅限react native）
-  |- routers - 路由组件（仅限react web）
+  |- routes - 路由组件（仅限react web）
   |- screens - 应用屏幕组件（仅限react native）
   |- pages - 应用页面组件（仅限react web）
   |- services - 外界连接服务
@@ -202,7 +203,7 @@ enum LoginTypeEnum {
 
 #### 不要使用默认导出
 
-使用时需要命名，容易导致各个模块命名不一致。
+使用默认导出会导致命名不一致的问题，使用时需要为其命名。
 
 ```tsx
 // Bad
@@ -216,7 +217,7 @@ export const getUsers = () => {...};
 
 #### 使用 ES6 箭头函数
 
-箭头函数允许我们使用更短的语法来编写函数。
+箭头函数能够以更简洁的方式编写函数。
 
 ```tsx
 // Bad
@@ -251,4 +252,4 @@ react-native：[sj-distributor/eslint-plugin-react-native](https://github.com/sj
 - 所有颜色样式需定义在颜色主题配置文件中 `/src/theme/colors.ts`。
 - 所有字体大小样式需定义在 `tailwind.config.ts/.js` 配置文件中的 `theme` 属性中。
 - 一些可以共用的样式也可以考虑定义在主题配置里面: `tailwind.config.ts/.js`
-- `antd` 组件样式修改时如果是通用样式，可以利用 `antd` 的[自定义主题功能进行样式配置](https://ant.design/theme-editor-cn#component-style)，然后定义在 `antd` 主题配置文件中 `。
+- 如果需要修改 `Ant Design` 组件的样式，可以利用 `Ant Design` 的[自定义主题功能进行样式配置](https://ant.design/theme-editor-cn#component-style)，然后将样式定义在 `Ant Design` 主题配置文件中。
